@@ -14,4 +14,4 @@ ENV PYTHONUNBUFFERED=1
 
 COPY . /app
 
-RUN uv install
+RUN uv sync

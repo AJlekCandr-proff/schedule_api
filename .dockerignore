@@ -53,5 +53,5 @@ docs/_build/
 .gitmodules
 
 Dockerfile
-docker-compose.yml
+docker-compose.dev.yml
 .dockerignore

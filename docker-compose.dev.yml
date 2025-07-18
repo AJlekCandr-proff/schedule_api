@@ -2,10 +2,10 @@ services:
   api:
     build: .
     env_file:
-      - .env
+      - ".env"
     container_name: schedule_api_service
-    restart: unless-stopped
-    command: uvicorn src.main:app --workers 4 --host 0.0.0.0
+    restart: always
+    command: ["make", "run_dev"]
     ports:
       - "8000:8000"
     depends_on:
@@ -13,7 +13,7 @@ services:
       - postgres
 
   redis:
-    image: redis:latest
+    image: redis:8.0-alpine
     container_name: schedule_api_redis
     restart: unless-stopped
     command:
@@ -21,7 +21,7 @@ services:
 
   postgres:
     image: postgres:17-alpine
-    container_name: schedule_api_db
+    container_name: schedule_api_postgres
     restart: unless-stopped
     env_file:
       .env

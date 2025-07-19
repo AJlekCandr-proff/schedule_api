@@ -4,8 +4,13 @@ services:
     env_file:
       - ".env"
     container_name: schedule_api_service
+<<<<<<< HEAD:docker-compose.dev.yml
     restart: always
     command: ["make", "run_dev"]
+=======
+    restart: unless-stopped
+    command: uvicorn src.schedule_api.application.application:app --workers 4 --host 0.0.0.0
+>>>>>>> 6eb506200ab9fec0c7844d67560b895c7b0ade65:docker-compose.yml
     ports:
       - "8000:8000"
     depends_on:

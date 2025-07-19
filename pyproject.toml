@@ -12,6 +12,7 @@ dependencies = [
     "pre-commit>=4.2.0",
     "pydantic-settings",
     "pymarkdownlnt>=0.9.31",
+    "python-slugify>=8.0.4",
     "sqlalchemy>=2.0.41",
     "uvicorn>=0.35.0",
     "yamlfix>=1.17.0",
